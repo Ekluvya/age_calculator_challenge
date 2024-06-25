@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css"/>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Yash Khare</a>.
+  </div>
+
+  <div class="container">
+    <div class="upperPart">
+      <div class="form">
+     
+       <div>
+        <p> <label for="day">DAY</label> </p>
+        <input class = "" placeholder="DD" type="text" id="day" name="birth_day" maxlength="2"/>
+        <p id="bottomError">Must be a valid day</p>
+        <p id="invalidError">This field is required</p>
+      </div>
+
+      <div>
+        <p> <label for="month">MONTH</label> </p>
+        <input placeholder="MM" type="text" id="month" name="birth_month" max="2"/>
+        <p id="bottomError">Must be a valid month</p>
+        <p id="invalidError">This field is required</p>
+      </div>
+
+      <div>
+        <p> <label for="year">YEAR</label> </p>
+        <input placeholder="YYYY" type="text" id="year" name="birth_year" maxlength="4"/>
+        <p id="bottomError">Must be in the past</p>
+        <p id="invalidError">This field is required</p>
+      </div>
+     
+    </div>
+  </div>
+    <div class="middlePart">
+      <div class="line"></div>
+      <button class="circle" id="btn"><i class='bx bxs-down-arrow-alt'></i></button>
+    </div>
+ 
+    <div class="lowerPart">
+
+      <p>
+      <span class="spanDash" id="spanYear">--</span> <span class="spanText">years</span>
+    </p>
+    <p>
+      <span class="spanDash" id="spanMonth">--</span> <span class="spanText">months</span>
+    </p>
+    <p>
+      <span class="spanDash" id="spanDay">--</span> <span class="spanText">days</span>
+    </p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script>
+    const inputYear = document.getElementById('year');
+    const inputMonth = document.getElementById('month');
+    const inputDay = document.getElementById('day');
+    const btn = document.getElementById('btn');
+
+    const outYear = document.getElementById('spanYear');
+    const outMonth = document.getElementById('spanMonth');
+    const outDay = document.getElementById('spanDay');
+    
+    function fun1() {
+    var yearValue = Number(inputYear.value.replace(/^0+/, ''));
+    var monthValue = Number(inputMonth.value.replace(/^0+/, ''));
+    var dayValue = Number(inputDay.value.replace(/^0+/, ''));
+    
+    const date = new Date(`${yearValue}-${monthValue}-${dayValue}`);
+    const currentDate = new Date(Date.now());
+    const monthNames = [1,2,3,4,5,6,7,8,9,10,11,12];
+    
+    if ( date > currentDate ) {
+      console.log("This date is bigger!")
+      const errorText = document.querySelectorAll('#bottomError');
+
+      errorText.forEach(element => {
+        console.log(element.innerHTML)
+        element.style.display = "block";
+      });
+
+      inputYear.className = inputYear.className + "error";
+      inputMonth.className = inputMonth.className + "error";
+      inputDay.className = inputDay.className + "error";
+
+      const labels = document.querySelectorAll('label');
+
+      labels.forEach(element => {
+          element.className = element.className + "errorFont";
+      });
+  
+    }
+     else if(date == 'Invalid Date') {
+      console.log("This date is bigger!")
+      const errorText = document.querySelectorAll('#invalidError');
+
+      errorText.forEach(element => {
+        console.log(element.innerHTML)
+        element.style.display = "block";
+      });
+
+      inputYear.className = inputYear.className + "error";
+      inputMonth.className = inputMonth.className + "error";
+      inputDay.className = inputDay.className + "error";
+
+      const labels = document.querySelectorAll('label');
+
+      labels.forEach(element => {
+          element.className = element.className + "errorFont";
+      });
+     }
+     else {
+      
+  
+  let years = currentDate.getFullYear() - date.getFullYear();
+  let months = currentDate.getMonth() - date.getMonth();
+  let days = currentDate.getDate() - date.getDate();
+  
+  // Adjust for negative months or days
+  if (days < 0) {
+    months--;
+    days += new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+  }
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  console.log(`${years} years, ${months} months, and ${days} days`);
+
+  outDay.innerHTML = days
+  outMonth.innerHTML = months
+  outYear.innerHTML = years
+     }
+    }
+
+    btn.addEventListener('click',fun1);
+
+  </script>
+
+</body>
+</html>

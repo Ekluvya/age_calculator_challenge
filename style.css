@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,400;1,800&display=swap');
+body {
+    background-color: hsl(0, 0%, 94%);
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    height: 70%;
+    width: 47%;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 30% 10px;
+}
+
+.form {
+    padding: 25px 50px;
+}
+.form > div{
+   margin-right: 20px;
+   display: inline-block;
+}
+
+input[type=text] {
+    border: 1px solid hsl(0, 0%, 94%);
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 1px;
+
+}
+
+label {
+    font-weight: normal;
+    color: hsl(0, 1%, 44%);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.middlePart > div {
+    display: inline-block;
+}
+
+.middlePart{
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.middlePart .line {
+     height: 1px;
+     width: 85%;
+     background-color: hsl(0, 0%, 86%);
+}
+
+.middlePart .circle {
+    height: 70px;
+    width: 70px;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.middlePart .circle:hover {
+    background-color: white;
+    border: 1px solid hsl(259, 100%, 65%);
+    color: hsl(259, 100%, 65%);;
+}
+
+.lowerPart {
+    padding-left: 50px;
+}
+.lowerPart .spanDash {
+    color: hsl(259, 100%, 65%);
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 700;
+    margin-right: 10px;
+    letter-spacing: 5px;
+}
+
+.lowerPart .spanText {
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.lowerPart > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bottomError, #invalidError {
+    color: hsl(0, 100%, 67%);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    display: none;
+}
+
+.error {
+    border-color: hsl(0, 100%, 67%) !important;
+}
+
+.errorFont {
+    color: hsl(0, 100%, 67%) !important;
+}
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* Styles for small devices go here */
+    .container {
+        height: 60%;
+        width: 95%;
+        background-color: hsl(0, 0%, 100%);
+        margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border-radius: 10px 10px 30% 10px;
+    }
+
+    .form {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .form > div{
+       margin-right: 0.5rem;
+       display: inline-block;
+    }
+
+    .middlePart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .middlePart .line {
+         height: 1px;
+         width: 100%;
+         background-color: hsl(0, 0%, 86%);
+         position: relative;
+    }
+
+    .middlePart .circle {
+        height: 70px;
+        width: 70px;
+        background-color: hsl(259, 100%, 65%);
+        border-radius: 50%;
+        display: flex;
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .lowerPart {
+        padding-left: 1rem;
+    }
+
+    .lowerPart .spanDash {
+        color: hsl(259, 100%, 65%);
+        font-size: 4rem;
+        font-style: italic;
+        font-weight: 700;
+        margin-right: 1rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    .lowerPart .spanText {
+        font-size: 3.5rem;
+        font-style: italic;
+        font-weight: 700;
+    }
+    
+  }
+
+  /* Medium devices (tablets, 601px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* Styles for medium devices go here */
+     /* Styles for small devices go here */
+     .container {
+        height: 60%;
+        width: 80%;
+        background-color: hsl(0, 0%, 100%);
+        margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border-radius: 10px 10px 30% 10px;
+    }
+
+    .form {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .form > div{
+       margin-right: 0.5rem;
+       display: inline-block;
+    }
+
+    .middlePart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .middlePart .line {
+         height: 1px;
+         width: 100%;
+         background-color: hsl(0, 0%, 86%);
+         position: relative;
+    }
+
+    .middlePart .circle {
+        height: 70px;
+        width: 70px;
+        background-color: hsl(259, 100%, 65%);
+        border-radius: 50%;
+        display: flex;
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .lowerPart {
+        padding-left: 1rem;
+    }
+
+    .lowerPart .spanDash {
+        color: hsl(259, 100%, 65%);
+        font-size: 4rem;
+        font-style: italic;
+        font-weight: 700;
+        margin-right: 1rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    .lowerPart .spanText {
+        font-size: 3.5rem;
+        font-style: italic;
+        font-weight: 700;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 769px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for large devices go here */
+
+       /* Styles for medium devices go here */
+     /* Styles for small devices go here */
+     .container {
+        height: 70%;
+        width: 80%;
+        background-color: hsl(0, 0%, 100%);
+        margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border-radius: 10px 10px 30% 10px;
+    }
+
+    .form {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+    .form > div{
+       margin-right: 0.5rem;
+       display: inline-block;
+    }
+
+    .middlePart{
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+    
+    .middlePart .line {
+         height: 1px;
+         width: 85%;
+         background-color: hsl(0, 0%, 86%);
+    }
+
+    .middlePart .circle {
+        height: 70px;
+        width: 70px;
+        background-color: hsl(259, 100%, 65%);
+        border-radius: 50%;
+        display: flex;
+        color: white;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .lowerPart {
+        padding-left: 4rem;
+    }
+
+    .lowerPart .spanDash {
+        color: hsl(259, 100%, 65%);
+        font-size: 4.5rem;
+        font-style: italic;
+        font-weight: 700;
+        margin-right: 1rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    .lowerPart .spanText {
+        font-size: 3.5rem;
+        font-style: italic;
+        font-weight: 700;
+    }
+  }
+
